@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,20 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/starterkit.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -31,15 +38,9 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/starterkit.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Building Key4hep Software on Arch Linux with spack" href="spack-arch.html" />
+    <link rel="next" title="Spack Usage and Further Technical Topics" href="spack-advanced.html" />
     <link rel="prev" title="Getting started with Key4HEP software" href="../setup-and-getting-started/README.html" /> 
 </head>
 
@@ -54,7 +55,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Key4HEP
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Key4HEP
           
 
           
@@ -80,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -104,7 +106,20 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-a-central-buildcache">Using a central buildcache</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="spack-arch.html">Building Key4hep Software on Arch Linux with spack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spack-advanced.html">Spack Usage and Further Technical Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#concretizing-before-installation">Concretizing before Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#system-dependencies">System Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#target-architectures">Target Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#bundle-packages-and-environments">Bundle Packages and Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#setting-up-runtime-environments">Setting Up Runtime Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#compiler-dependencies-and-data-packages">Compiler Dependencies and Data Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#duplicating-recipes-in-downstream-repositories">Duplicating Recipes in Downstream Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#cvmfs-installation-workflow">CVMFS Installation Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#compiler-wrappers">Compiler Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#nightly-builds-and-using-git-commits-as-versions">Nightly Builds and Using Git Commits as Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-advanced.html#spack-installed-lcg-releases">Spack-Installed LCG releases</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../talks-and-presentations/README.html">Talks and Presentations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../talks-and-presentations/README.html#upcoming-talks-and-workshops">Upcoming Talks and Workshops</a></li>
 </ul>
@@ -132,6 +147,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -170,7 +186,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Using Spack to build Key4HEP software</li>
     
@@ -219,15 +235,31 @@
 </style>
 <div class="section" id="using-spack-to-build-key4hep-software">
 <h1>Using Spack to build Key4HEP software<a class="headerlink" href="#using-spack-to-build-key4hep-software" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference external" href="https://spack.io">spack</a> package manager can be used to build the Key4HEP software stack.</p>
+<p>The <a class="reference external" href="https://spack.io">spack</a> package manager can be  used to build the Key4HEP software packages.
+This is part of a software R&amp;D program, so some parts are still somewhat experimental</p>
+<p>A central installation is provided on cvmfs, and can be used without spack by sourcing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /cvmfs/sw.hsf.org/key4hep/views/key4hep-stack-0.1/linux-centos7-broadwell/gcc-8.3.0/setup.sh
+</pre></div>
+</div>
+<p>Using spack can give a more fine-grained control over loaded packages.</p>
 <p>Spack can be installed by simply cloning it with git. The spack repository for key4hep packages is installed the same way:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/spack/spack.git
+<span class="nb">source</span> spack/share/spack/setup-env.sh
 git clone https://github.com/key4hep/k4-spack.git
-<span class="nb">alias</span> <span class="nv">spack</span><span class="o">=</span><span class="s1">&#39;python $PWD/spack/bin/spack&#39;</span>
 
 spack repo add k4-spack
-
-<span class="c1"># install the meta-package for the key4hep-stack</span>
+</pre></div>
+</div>
+<p>The cvmfs installation can now be used as an “upstream installation”, by adding the following configuration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt;EOT &gt;&gt; $HOME/.spack/linux/upstreams.yaml</span>
+<span class="s">upstreams:</span>
+<span class="s">  spack-instance-1:</span>
+<span class="s">      install_tree: /cvmfs/sw.hsf.org/spackages/</span>
+<span class="s">EOT</span>
+</pre></div>
+</div>
+<p>Alternatively, the full stack can be installed locally by simply doing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install the meta-package for the key4hep-stack</span>
 spack install key4hep-stack
 </pre></div>
 </div>
@@ -279,7 +311,7 @@ For read-only access on machines without <code class="docutils literal notransla
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="spack-arch.html" class="btn btn-neutral float-right" title="Building Key4hep Software on Arch Linux with spack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="spack-advanced.html" class="btn btn-neutral float-right" title="Spack Usage and Further Technical Topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../setup-and-getting-started/README.html" class="btn btn-neutral float-left" title="Getting started with Key4HEP software" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -291,11 +323,19 @@ For read-only access on machines without <code class="docutils literal notransla
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Key4HEP
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -306,7 +346,6 @@ For read-only access on machines without <code class="docutils literal notransla
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
