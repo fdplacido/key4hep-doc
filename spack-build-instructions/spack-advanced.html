@@ -107,7 +107,14 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Spack Usage and Further Technical Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#concretizing-before-installation">Concretizing before Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concretizing-before-installation">Concretizing before Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#working-around-spack-concretizer-problems">Working around spack concretizer problems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requiring-a-specific-package-version">Requiring a specific package version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#requiring-certain-variants-globally">Requiring certain variants globally</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#system-dependencies">System Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#target-architectures">Target Architectures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bundle-packages-and-environments">Bundle Packages and Environments</a></li>
@@ -287,6 +294,47 @@ Concretized
 </pre></div>
 </div>
 <p>This ‘concretizer’ is one of the areas of development in spack, so the commands might frequently change or the behaviour differ from what is described here.</p>
+<div class="section" id="working-around-spack-concretizer-problems">
+<h3>Working around spack concretizer problems<a class="headerlink" href="#working-around-spack-concretizer-problems" title="Permalink to this headline">¶</a></h3>
+<p>Currently the default settings for some of the packages here do not work due to
+known <a class="reference external" href="https://spack.readthedocs.io/en/latest/known_issues.html#variants-are-not-properly-forwarded-to-dependencies">short comings of the spack
+concretizer</a>.
+For example <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">install</span> <span class="pre">K4FWCore</span></code> will most probably fail with the following error</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. &quot;cxxstd=11&quot; conflicts with &quot;root+root7&quot; [root7 requires at least C++14]
+</pre></div>
+</div>
+<p>Instead of fixing all the packages to deal with these issues, one of the
+following workarounds can be used. The issues in spack are planned to be fixed
+with the next spack release which would hopefully make these obsolete.</p>
+<div class="section" id="requiring-a-specific-package-version">
+<h4>Requiring a specific package version<a class="headerlink" href="#requiring-a-specific-package-version" title="Permalink to this headline">¶</a></h4>
+<p>The simplest solution to the above problem is to simply require a <code class="docutils literal notranslate"><span class="pre">root</span></code> version
+with the appropriate requirements, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack install K4FWCore ^root <span class="nv">cxxstd</span><span class="o">=</span><span class="m">17</span>
+</pre></div>
+</div>
+<p>will tell spack to use <code class="docutils literal notranslate"><span class="pre">cxxstd=17</span></code> also for building <code class="docutils literal notranslate"><span class="pre">root</span></code> and get rid of the
+conflict above. If using this, make sure to use the same value for <code class="docutils literal notranslate"><span class="pre">cxxstd</span></code> for
+<code class="docutils literal notranslate"><span class="pre">K4FWCore</span></code> and <code class="docutils literal notranslate"><span class="pre">root</span></code>.</p>
+</div>
+<div class="section" id="requiring-certain-variants-globally">
+<h4>Requiring certain variants globally<a class="headerlink" href="#requiring-certain-variants-globally" title="Permalink to this headline">¶</a></h4>
+<p>spack can be configured using some <a class="reference external" href="https://spack.readthedocs.io/en/latest/configuration.html">configuration
+files</a>. Specifically
+using <code class="docutils literal notranslate"><span class="pre">packages.yaml</span></code> which is read from the user directory, i.e. <code class="docutils literal notranslate"><span class="pre">~/.spack</span></code> (or
+<code class="docutils literal notranslate"><span class="pre">/.spack/linux</span></code>) can be used to enforce the value of certain default variants
+globally. To solve the above problem it is enough to put the following into
+<code class="docutils literal notranslate"><span class="pre">packages.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">packages</span><span class="p">:</span>
+  <span class="nt">all</span><span class="p">:</span>
+  <span class="nt">variants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cxxstd=17</span>
+</pre></div>
+</div>
+<p>It is still possible to override this for certain packages either by
+individually configuring them in <code class="docutils literal notranslate"><span class="pre">packages.yaml</span></code> or via the command line which
+take precedence over all configuration files.</p>
+</div>
+</div>
 </div>
 <div class="section" id="system-dependencies">
 <h2>System Dependencies<a class="headerlink" href="#system-dependencies" title="Permalink to this headline">¶</a></h2>
