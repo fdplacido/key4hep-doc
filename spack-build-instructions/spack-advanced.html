@@ -236,7 +236,7 @@
 <div class="section" id="spack-usage-and-further-technical-topics">
 <h1>Spack Usage and Further Technical Topics<a class="headerlink" href="#spack-usage-and-further-technical-topics" title="Permalink to this headline">¶</a></h1>
 <p>This page collects a few known workarounds for issues and areas of development in spack.
-Check also the issues in <a class="reference external" href="https://github.com/key4hep/k4-spack/issues">k4-spack</a> for up to date information.</p>
+Check also the issues in <a class="reference external" href="https://github.com/key4hep/k4-spack/issues">k4-spack</a> for up-to-date information.</p>
 <div class="section" id="concretizing-before-installation">
 <h2>Concretizing before Installation<a class="headerlink" href="#concretizing-before-installation" title="Permalink to this headline">¶</a></h2>
 <p>Spack often needs to be forced to use existing packages as dependencies when installing a new package.
@@ -262,7 +262,7 @@ Concretized
 <span class="o">[</span>+<span class="o">]</span>              ^zlib@1.2.11%gcc@9.3.0+optimize+pic+shared <span class="nv">arch</span><span class="o">=</span>linux-ubuntu20.04-broadwell
 </pre></div>
 </div>
-<p>In this example, you could check for an existing ocaml installation and use it via its hash:</p>
+<p>In this example, you could check for an existing <code class="docutils literal notranslate"><span class="pre">ocaml</span></code> installation and use it via its hash:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack find -l ocaml
 </pre></div>
 </div>
@@ -291,7 +291,7 @@ Concretized
 <div class="section" id="system-dependencies">
 <h2>System Dependencies<a class="headerlink" href="#system-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Although spack can use externally installed packages (and even automatically find them), this is strongly discouraged.
-This is because the dependency resolution will not work as intended.</p>
+This is because the dependency resolution may not work as intended, and changes to the external packages can break the installation</p>
 </div>
 <div class="section" id="target-architectures">
 <h2>Target Architectures<a class="headerlink" href="#target-architectures" title="Permalink to this headline">¶</a></h2>
@@ -306,7 +306,7 @@ This is because the dependency resolution will not work as intended.</p>
 <div class="section" id="bundle-packages-and-environments">
 <h2>Bundle Packages and Environments<a class="headerlink" href="#bundle-packages-and-environments" title="Permalink to this headline">¶</a></h2>
 <p>Right now, key4hep is installed via a <code class="docutils literal notranslate"><span class="pre">BundlePackage</span></code>, that depends on all other relevant packages.
-An alternative would be to use [spack environments](https://spack-tutorial.readthedocs.io/en/latest/tutorial_environments.html#creating-and-activating-environments)</p>
+An alternative would be to use [spack environments](https://spack-tutorial.readthedocs.io/en/latest/tutorial_environments.html#creating-and-activating-environments). This alternative is still under investigation.</p>
 </div>
 <div class="section" id="setting-up-runtime-environments">
 <h2>Setting Up Runtime Environments<a class="headerlink" href="#setting-up-runtime-environments" title="Permalink to this headline">¶</a></h2>
@@ -316,7 +316,7 @@ However, there is no good way to set up the runtime environments for the package
 </div>
 <div class="section" id="compiler-dependencies-and-data-packages">
 <h2>Compiler Dependencies and Data Packages<a class="headerlink" href="#compiler-dependencies-and-data-packages" title="Permalink to this headline">¶</a></h2>
-<p>Some HEP packages are not really specific to any platform/compiler because they consist only of data files.
+<p>Some HEP packages (like <code class="docutils literal notranslate"><span class="pre">geant4-data</span></code>) consist only of data files, and can thus be used on any platform.
 Spack cannot yet handle this gracefully, but an ongoing development tries to treat compilers as dependencies, which would help with re-using data packages.</p>
 </div>
 <div class="section" id="duplicating-recipes-in-downstream-repositories">
@@ -336,7 +336,7 @@ Also, packages are installed in different namespaces, so it is not possible to d
 <h2>Compiler Wrappers<a class="headerlink" href="#compiler-wrappers" title="Permalink to this headline">¶</a></h2>
 <p>Spack uses compiler wrappers instead of exposing the actual compilers during the build.
 For packages like whizard, which register the compiler path to use during runtime, this will not work, as the wrappers are not available at runtime.
-For these packages, the current workaround is to force spack to use the actual compilers during build (see whizard recipe)</p>
+For these packages, the current workaround is to force spack to use the actual compilers during build (see the build recipe of <code class="docutils literal notranslate"><span class="pre">whizard</span></code>).</p>
 </div>
 <div class="section" id="nightly-builds-and-using-git-commits-as-versions">
 <h2>Nightly Builds and Using Git Commits as Versions<a class="headerlink" href="#nightly-builds-and-using-git-commits-as-versions" title="Permalink to this headline">¶</a></h2>
