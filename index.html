@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contributing &mdash; Key4HEP  documentation</title>
+  <title>Key4HEP &mdash; Key4HEP  documentation</title>
   
 
   
@@ -42,8 +42,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Contributor Code of Conduct" href="CONDUCT.html" />
-    <link rel="prev" title="Call for logos" href="call-for-logos/README.html" /> 
+    <link rel="next" title="Getting started with Key4HEP software" href="setup-and-getting-started/README.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +56,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Key4HEP
+            <a href="#" class="icon icon-home" alt="Documentation Home"> Key4HEP
           
 
           
@@ -92,7 +91,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="setup-and-getting-started/README.html">Getting started with Key4HEP software</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="setup-and-getting-started/README.html#setting-up-the-key4hep-software-stack">Setting up the Key4HEP Software Stack</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="setup-and-getting-started/README.html#using-central-installations-on-cvmfs">Using central installations on cvmfs</a></li>
@@ -143,9 +142,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="call-for-logos/README.html">Call for logos</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#dependencies">Dependencies</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="CONDUCT.html">Contributor Code of Conduct</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LICENSE.html">Instructional Material</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LICENSE.html#software">Software</a></li>
@@ -175,7 +174,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Key4HEP</a>
+          <a href="#">Key4HEP</a>
         
       </nav>
 
@@ -204,16 +203,16 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Contributing</li>
+      <li>Key4HEP</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/key4hep/key4hep-doc/blob/master/CONTRIBUTING.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/key4hep/key4hep-doc/blob/master/index.md" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -227,48 +226,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="contributing">
-<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/lhcb/starterkit-lessons">starterkit-lessons</a> is an open source project, and we welcome contributions of all kinds:</p>
-<ul class="simple">
-<li><p>New lessons;</p></li>
-<li><p>Fixes to existing material;</p></li>
-<li><p>Bug reports; and</p></li>
-<li><p>Reviews of proposed changes.</p></li>
-</ul>
-<p>By contributing, you are agreeing that we may redistribute your work under <a class="reference internal" href="LICENSE.html"><span class="doc">these licenses</span></a>.
-You also agree to abide by our <a class="reference internal" href="CONDUCT.html"><span class="doc">contributor code of conduct</span></a>.</p>
-<div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>We use the <a class="reference external" href="https://reflectoring.io/github-fork-and-pull/">fork and pull</a> model to manage changes.
-More information about <a class="reference external" href="https://help.github.com/en/articles/fork-a-repo">forking a repository</a> and <a class="reference external" href="https://help.github.com/en/articles/about-pull-requests">making a Pull Request</a>.</p></li>
-<li><p>To build the lessons please install the <a class="reference external" href="#DEPENDENCIES">dependencies</a>.</p></li>
-<li><p>For our lessons, you should branch from and submit pull requests against the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p></li>
-<li><p>When editing lesson pages, you need only commit changes to the Markdown source files.</p></li>
-<li><p>If you’re looking for things to work on, please see <a class="reference external" href="https://github.com/lhcb/starterkit-lessons/issues">the list of issues for this repository</a>.
-Comments on issues and reviews of pull requests are equally welcome.</p></li>
-</ol>
-</div>
-<div class="section" id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
-<p>To build the lessons locally, install the following:</p>
-<ol class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/starterkit-ci/">starterkit-ci</a></p></li>
-</ol>
-<p>Then build the pages:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ starterkit_ci build --allow-warnings
-$ starterkit_ci check --allow-warnings
-</pre></div>
-</div>
-<p>and start a web server to host them:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> build
-$ python -m http.server <span class="m">8000</span>
-</pre></div>
-</div>
-<p>You can see your local version by using a web-browser to navigate to <code class="docutils literal notranslate"><span class="pre">http://localhost:8000</span></code> or wherever it says it’s serving the book.</p>
+  <div class="section" id="key4hep">
+<h1>Key4HEP<a class="headerlink" href="#key4hep" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup-and-getting-started/README.html">Getting started with Key4HEP software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup-and-getting-started/README.html#setting-up-the-key4hep-software-stack">Setting up the Key4HEP Software Stack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup-and-getting-started/README.html#using-central-installations-on-cvmfs">Using central installations on cvmfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-and-getting-started/README.html#using-virtual-machines-or-docker-containers">Using Virtual Machines or Docker containers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spack-build-instructions/README.html">Using Spack to build Key4HEP software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/README.html#using-a-central-buildcache">Using a central buildcache</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spack-build-instructions/spack-advanced.html">Spack Usage and Further Technical Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#concretizing-before-installation">Concretizing before Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#working-around-spack-concretizer-problems">Working around spack concretizer problems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#system-dependencies">System Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#target-architectures">Target Architectures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#bundle-packages-and-environments">Bundle Packages and Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#setting-up-runtime-environments">Setting Up Runtime Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#compiler-dependencies-and-data-packages">Compiler Dependencies and Data Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#duplicating-recipes-in-downstream-repositories">Duplicating Recipes in Downstream Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#cvmfs-installation-workflow">CVMFS Installation Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#compiler-wrappers">Compiler Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#nightly-builds-and-using-git-commits-as-versions">Nightly Builds and Using Git Commits as Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spack-build-instructions/spack-advanced.html#spack-installed-lcg-releases">Spack-Installed LCG releases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/clic.html">Using the Key4hep-Stack for CLIC Simulation and Reconstruction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/clic.html#simulation">Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/clic.html#reconstruction">Reconstruction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/clic.html#reconstruction-with-marlin">Reconstruction with Marlin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/clic.html#reconstruction-with-with-gaudi">Reconstruction with with Gaudi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="talks-and-presentations/README.html">Talks and Presentations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="talks-and-presentations/README.html#upcoming-talks-and-workshops">Upcoming Talks and Workshops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="call-for-logos/README.html">Call for logos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">External links:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://cern.ch/fccsw">FCC software</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://twiki.cern.ch/twiki/bin/view/CLIC/CLICSoftwareComputing">CLIC software</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ilcsoft.desy.de/portal">ILC software</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://cepcsoft.ihep.ac.cn/">CEPC software</a></li>
+</ul>
 </div>
 </div>
 
@@ -280,10 +305,8 @@ $ python -m http.server <span class="m">8000</span>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="CONDUCT.html" class="btn btn-neutral float-right" title="Contributor Code of Conduct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup-and-getting-started/README.html" class="btn btn-neutral float-right" title="Getting started with Key4HEP software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="call-for-logos/README.html" class="btn btn-neutral float-left" title="Call for logos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
