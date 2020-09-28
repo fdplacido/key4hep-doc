@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting started with Key4HEP software &mdash; Key4HEP  documentation</title>
+  <title>Using the Key4hep-Stack for CLIC Simulation and Reconstruction &mdash; Key4HEP  documentation</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using Spack to build Key4HEP software" href="../spack-build-instructions/README.html" />
-    <link rel="prev" title="Key4HEP" href="../contents.html" /> 
+    <link rel="next" title="Talks and Presentations" href="../talks-and-presentations/README.html" />
+    <link rel="prev" title="Spack Usage and Further Technical Topics" href="../spack-build-instructions/spack-advanced.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,11 +93,11 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started with Key4HEP software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-key4hep-software-stack">Setting up the Key4HEP Software Stack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-central-installations-on-cvmfs">Using central installations on cvmfs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-virtual-machines-or-docker-containers">Using Virtual Machines or Docker containers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#cernvm-virtual-appliance">CernVM Virtual Appliance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-and-getting-started/README.html">Getting started with Key4HEP software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../setup-and-getting-started/README.html#setting-up-the-key4hep-software-stack">Setting up the Key4HEP Software Stack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../setup-and-getting-started/README.html#using-central-installations-on-cvmfs">Using central installations on cvmfs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup-and-getting-started/README.html#using-virtual-machines-or-docker-containers">Using Virtual Machines or Docker containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup-and-getting-started/README.html#cernvm-virtual-appliance">CernVM Virtual Appliance</a></li>
 </ul>
 </li>
 </ul>
@@ -129,11 +129,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../spack-build-instructions/spack-advanced.html#spack-installed-lcg-releases">Spack-Installed LCG releases</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/clic.html">Using the Key4hep-Stack for CLIC Simulation and Reconstruction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../examples/clic.html#simulation">Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples/clic.html#reconstruction">Reconstruction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../examples/clic.html#reconstruction-with-marlin">Reconstruction with Marlin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../examples/clic.html#reconstruction-with-with-gaudi">Reconstruction with with Gaudi</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the Key4hep-Stack for CLIC Simulation and Reconstruction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simulation">Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reconstruction">Reconstruction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reconstruction-with-marlin">Reconstruction with Marlin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reconstruction-with-with-gaudi">Reconstruction with with Gaudi</a></li>
 </ul>
 </li>
 </ul>
@@ -206,14 +206,14 @@
     
       <li><a href="../contents.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Getting started with Key4HEP software</li>
+      <li>Using the Key4hep-Stack for CLIC Simulation and Reconstruction</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/key4hep/key4hep-doc/blob/master/setup-and-getting-started/README.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/key4hep/key4hep-doc/blob/master/examples/clic.md" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -227,72 +227,67 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-started-with-key4hep-software">
-<h1>Getting started with Key4HEP software<a class="headerlink" href="#getting-started-with-key4hep-software" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="setting-up-the-key4hep-software-stack">
-<h2>Setting up the Key4HEP Software Stack<a class="headerlink" href="#setting-up-the-key4hep-software-stack" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="using-central-installations-on-cvmfs">
-<h3>Using central installations on cvmfs<a class="headerlink" href="#using-central-installations-on-cvmfs" title="Permalink to this headline">¶</a></h3>
-<p>The following command will set up the pre-installed software on lxplus (or any centos7 machine with cvmfs):</p>
+  <div class="section" id="using-the-key4hep-stack-for-clic-simulation-and-reconstruction">
+<h1>Using the Key4hep-Stack for CLIC Simulation and Reconstruction<a class="headerlink" href="#using-the-key4hep-stack-for-clic-simulation-and-reconstruction" title="Permalink to this headline">¶</a></h1>
+<p>This assumes that you have access to an installation of the Key4hep-stack, either via <code class="docutils literal notranslate"><span class="pre">CVMFS</span></code> or <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">install</span></code>.
+To setup the installation on cvmfs, do:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /cvmfs/sw.hsf.org/key4hep/setup.sh
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-virtual-machines-or-docker-containers">
-<h3>Using Virtual Machines or Docker containers<a class="headerlink" href="#using-virtual-machines-or-docker-containers" title="Permalink to this headline">¶</a></h3>
-<p>The instructions above should work in any CentOS7 virtual machine or Docker container with <code class="docutils literal notranslate"><span class="pre">cvmfs</span></code> available. We give in the following one example for each of the two cases.</p>
-<div class="section" id="cernvm-virtual-appliance">
-<h4>CernVM Virtual Appliance<a class="headerlink" href="#cernvm-virtual-appliance" title="Permalink to this headline">¶</a></h4>
-<p>The CernVM project provides a convenient tool to start VMs, <a class="reference external" href="https://cernvm.cern.ch/portal/launch">cernvm-launch</a>, and a <a class="reference external" href="https://github.com/cernvm/public-contexts">public repository</a> of contexts to be used with <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span></code> to configure the VM at your needs. A context dedicated to Key4HEP is available in the repository. The <a class="reference external" href="https://cernvm.cern.ch/portal/launch">cernvm-launch</a> works with <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a>, virtualization manager available for free for all platforms.</p>
-<p>To create and use a CernVM virtual machine for Key4HEP please follow the following steps:</p>
-<ul>
-<li><p>Make sure <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a> is installed (details installing instructions from the product web page).</p></li>
-<li><p>Download the <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span></code> binary for your platform either from the <a class="reference external" href="https://ecsft.cern.ch/dist/cernvm/launch/bin/">dedicated download page</a> or from the following links:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://fccsw.web.cern.ch/fccsw/utils/vm/cernvm/launch/linux/cernvm-launch">Linux</a></p></li>
-<li><p><a class="reference external" href="https://fccsw.web.cern.ch/fccsw/utils/vm/cernvm/launch/mac/cernvm-launch">Mac</a></p></li>
-</ul>
-<p>Make sure is visible in your $PATH.</p>
-</li>
-<li><p>Get the <a class="reference external" href="https://raw.githubusercontent.com/cernvm/public-contexts/master/k4h-dev.context">k4h-dev.context</a> (use wget or curl)</p></li>
-</ul>
-<p>Once you have all this you can create the VM with this command:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cernvm-launch create --name k4h-dev --cpus 4 --memory 8000 --disk 20000 k4h-dev.context
+<p>These commands will explain how one can run the CLIC detector simulation and reconstruction using the Key4hep-Stack.
+First we will obtain all the necessary steering and input files for CLIC, simulate a few events and run the
+reconstruction both with <code class="docutils literal notranslate"><span class="pre">Marlin</span></code> and <code class="docutils literal notranslate"><span class="pre">k4run</span></code>. These steps can be adapted to simulate or run other <code class="docutils literal notranslate"><span class="pre">Marlin</span></code>
+processors as well.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CLICPerformance</span></code> repository contains the steering and input files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/iLCSoft/CLICPerformance
+<span class="nb">cd</span> CLICPerformance/clicConfig
 </pre></div>
 </div>
-<p>You an choose how many CPU cores to use, the memory and the disk space. Good rules of thumb are to use half the cores of your machine, at least 2 GB memory per core, and enough disk for your job. The above command should oepn a window with VirtualBox and produce on the screen an output like this</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Using user data file: k4h-dev.context
-Parameters used for the machine creation:
-	name: k4h-dev
-	cpus: 4
-	memory: 8000
-	disk: 20000
-	cernvmVersion: 2019.06-1
-	sharedFolder: /mnt/shared/k4h-dev-vs
+<div class="section" id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h2>
+<p>Now we can already simulate a few events</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ddsim --compactFile <span class="nv">$LCGEO</span>/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml <span class="se">\</span>
+      --outputFile ttbar.slcio <span class="se">\</span>
+      --steeringFile clic_steer.py <span class="se">\</span>
+      --inputFiles ../Tests/yyxyev_000.stdhep <span class="se">\</span>
+      --numberOfEvents <span class="m">3</span>
 </pre></div>
 </div>
-<p>You see in partcular that your <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> area is shared with the VM, so you can exchange files between the VM and the host machine very conveniently.
-From now on you can either work in the VirtualBox window or ssh to the machine with</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cernvm-launch ssh k4h-dev
+</div>
+<div class="section" id="reconstruction">
+<h2>Reconstruction<a class="headerlink" href="#reconstruction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reconstruction-with-marlin">
+<h3>Reconstruction with Marlin<a class="headerlink" href="#reconstruction-with-marlin" title="Permalink to this headline">¶</a></h3>
+<p>To run the reconstruction with <code class="docutils literal notranslate"><span class="pre">Marlin</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Marlin clicReconstruction.xml <span class="se">\</span>
+       --InitDD4hep.DD4hepXMLFile<span class="o">=</span><span class="nv">$LCGEO</span>/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml <span class="se">\</span>
+       --global.LCIOInputFiles<span class="o">=</span>ttbar.slcio <span class="se">\</span>
+       --global.MaxRecordNumber<span class="o">=</span><span class="m">3</span>
 </pre></div>
 </div>
-<p>In either case you need a user name and password, which by default are <code class="docutils literal notranslate"><span class="pre">k4huser</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code>; these can be changed in the <code class="docutils literal notranslate"><span class="pre">k4h-dev.context</span></code> file.</p>
-<p>To enable graphics you need to find out the port on which the VM responds and use <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span> <span class="pre">-P</span> <span class="pre">&lt;port&gt;</span> <span class="pre">fccuser&#64;localhost</span></code>. For example</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cernvm-launch list
-k4h-dev`:	CVM: 2019.06-1	port: 36998
-...
-$ ssh -Y -P 36998 k4huser@localhost
-The authenticity of host &#39;[localhost]:36998 ([127.0.0.1]:36998)&#39; can&#39;t be established.
-ECDSA key fingerprint is SHA256:JXjpOzSu7vIwgEDxc8s/fdDJv4gQs2SUjnbMnEZsaYI.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &#39;[localhost]:36998&#39; (ECDSA) to the list of known hosts.
-k4huser@localhost&#39;s password:
-[k4huser@localhost ~]$
+</div>
+<div class="section" id="reconstruction-with-with-gaudi">
+<h3>Reconstruction with with Gaudi<a class="headerlink" href="#reconstruction-with-with-gaudi" title="Permalink to this headline">¶</a></h3>
+<p>We can convert the <code class="docutils literal notranslate"><span class="pre">xml</span></code> steering file to a Gaudi steering file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>convertMarlinSteeringToGaudi.py clicReconstruction.xml  &gt; clicReconstruction.py
 </pre></div>
 </div>
-<p>(you can safely ignore warnings about setting LC_CTYPE).
-Graphics should of course work well if you choose to work in the VirtualBox window.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span></code> also supports listing, stopping, starting virtual machines. Please run <code class="docutils literal notranslate"><span class="pre">cernvm-launch</span> <span class="pre">-h</span></code> for all the available options.</p>
+<p>Now we need to modify the <code class="docutils literal notranslate"><span class="pre">clicReconstruction.py</span></code> file to point to the <code class="docutils literal notranslate"><span class="pre">ttbar.slcio</span></code> input file, and change the
+<code class="docutils literal notranslate"><span class="pre">DD4hepXMLFile</span></code> parameter for the <code class="docutils literal notranslate"><span class="pre">InitDD4hep</span></code> algorithm.  In addition the two processors with the comment <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Config.OverlayFalse</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Config.TrackingConformal</span></code> should be enabled by uncommenting their line in the <code class="docutils literal notranslate"><span class="pre">algList</span></code>
+at the end of the file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed -i <span class="s1">&#39;s;read.Files = \[&quot;.*&quot;\];read.Files = \[&quot;ttbar.slcio&quot;\];&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;EvtMax   = 10,;EvtMax   = 3,;&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;&quot;MaxRecordNumber&quot;, &quot;10&quot;, END_TAG,;&quot;MaxRecordNumber&quot;, &quot;3&quot;, END_TAG,;&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;# algList.append(OverlayFalse);algList.append(OverlayFalse);&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;# algList.append(MyConformalTracking);algList.append(MyConformalTracking);&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;# algList.append(ClonesAndSplitTracksFinder);algList.append(ClonesAndSplitTracksFinder);&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;# algList.append(RenameCollection);algList.append(RenameCollection);&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;&quot;DD4hepXMLFile&quot;, &quot;.*&quot;,; &quot;DD4hepXMLFile&quot;, &quot;os.environ[&quot;LCGEO&quot;]+&quot;/compact/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml&quot;,;&#39;</span> clicReconstruction.py
+</pre></div>
+</div>
+<p>Then the reconstruction using the wrapper can be run with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>k4run clicReconstruction.py
+</pre></div>
 </div>
 </div>
 </div>
@@ -306,10 +301,10 @@ Graphics should of course work well if you choose to work in the VirtualBox wind
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../spack-build-instructions/README.html" class="btn btn-neutral float-right" title="Using Spack to build Key4HEP software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../talks-and-presentations/README.html" class="btn btn-neutral float-right" title="Talks and Presentations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../contents.html" class="btn btn-neutral float-left" title="Key4HEP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../spack-build-instructions/spack-advanced.html" class="btn btn-neutral float-left" title="Spack Usage and Further Technical Topics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
