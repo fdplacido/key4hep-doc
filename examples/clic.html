@@ -282,7 +282,7 @@ sed -i <span class="s1">&#39;s;# algList.append(OverlayFalse);algList.append(Ove
 sed -i <span class="s1">&#39;s;# algList.append(MyConformalTracking);algList.append(MyConformalTracking);&#39;</span> clicReconstruction.py
 sed -i <span class="s1">&#39;s;# algList.append(ClonesAndSplitTracksFinder);algList.append(ClonesAndSplitTracksFinder);&#39;</span> clicReconstruction.py
 sed -i <span class="s1">&#39;s;# algList.append(RenameCollection);algList.append(RenameCollection);&#39;</span> clicReconstruction.py
-sed -i <span class="s1">&#39;s;&quot;DD4hepXMLFile&quot;, &quot;.*&quot;,; &quot;DD4hepXMLFile&quot;, &quot;os.environ[&quot;LCGEO&quot;]+&quot;/compact/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml&quot;,;&#39;</span> clicReconstruction.py
+sed -i <span class="s1">&#39;s;&quot;DD4hepXMLFile&quot;, &quot;.*&quot;,; &quot;DD4hepXMLFile&quot;, os.environ[&quot;LCGEO&quot;]+&quot;/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml&quot;,;&#39;</span> clicReconstruction.py
 </pre></div>
 </div>
 <p>Then the reconstruction using the wrapper can be run with</p>
